@@ -2,32 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const nayoks = ['Anwar', 'joshim', 'Maruf']
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a reader</p>
-         <Result name="Rubel Mia" Age ="40" ></Result>
-         <Result name="Khan Mia" Age ="80" ></Result>
-         <Result name="Iliyas Mia" Age ="35" ></Result>
+        <Person name = "Munna" Profession ="Jobless"  ></Person>
+        <Person name = "Sadik" Profession ="Football"  ></Person>
+        <Person></Person>
+        <Person></Person>
+         
       
 
       </header>
     </div>
   );
 }
-function Result(props){
-  const ResultStyle ={
-    border : '2px solid yellow',
-    margin : '10px'
-  }
-  console.log(props);
+
+function Person(props){
   return (
-  <div style={ResultStyle} >
-    <h2>Name : {props.name}</h2>
-    <h2>Other : {props.Age}</h2>
-
-  </div>) 
+    <div>
+      <h3>My Name : {props.name}</h3>
+      <p>Profession : {props.Profession} </p>
+    </div>
+  )
 }
-
-
 export default App;
