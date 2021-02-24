@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const nayoks = ['Bappi','shuvo','kakku']
@@ -16,6 +16,7 @@ function App() {
       <header className="App-header">
         <p>I am a reader</p>
         <Counter></Counter>
+        <Users></Users>
         <ul>
           {
             nayoks.map(nayok => <li>{nayok}</li>)
@@ -48,7 +49,21 @@ function Counter(){
   )
 
 }
+function Users(){
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then( res => res.json())
+    .then(data => console.log(data));
+  })
 
+
+  return(
+    <div>
+      <h3>Dynamic users</h3>
+    </div>
+  )
+}
 function Product(props){
   const productStyle={
     border : '1px solid yellow',
