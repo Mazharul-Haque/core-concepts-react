@@ -54,13 +54,18 @@ function Users(){
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then( res => res.json())
-    .then(data => console.log(data));
+    .then(data => setUsers(data));
   })
 
 
   return(
     <div>
-      <h3>Dynamic users</h3>
+      <h3>Dynamic users : {users.length} </h3>
+      <ul>
+        {
+          users.map(user => <li>{user.name}</li>)
+        }
+      </ul>
     </div>
   )
 }
